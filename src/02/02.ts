@@ -7,23 +7,29 @@ type studentType = {
     technologies: Array<technologiesType>
 }
 type addressType = {
-    city: string
-    country: string
+    streetTitle: string
+    city: cityType
 }
 type technologiesType = {
     id: number
     title: string
 }
-
+type cityType = {
+    title: string
+    countryTitle: string
+}
 
 const student: studentType = {
     id: 1,
-    'name': 'Kostya',
+    name: 'Kostya',
     age: 22,
     isActive: true,
     address: {
-        city: 'Moscow',
-        country: 'Russia'
+        streetTitle: 'Politechnicheskaya',
+        city: {
+            title: 'Saint-Petersburg',
+            countryTitle: 'Russia',
+        },
     },
     technologies: [
         {
@@ -40,3 +46,7 @@ const student: studentType = {
         },
     ]
 }
+console.log(student.age)
+console.log(student.name)
+console.log(student.isActive)
+console.log(student.technologies.map(el => el.title))
